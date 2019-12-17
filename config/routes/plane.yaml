@@ -1,0 +1,32 @@
+plane-display-all:
+  path: /
+  controller: App\Controller\PlaneController::displayAll
+  methods: GET
+
+plane-add:
+  path: /
+  controller: App\Controller\PlaneController::add
+  methods: PUT
+
+plane-display:
+  path: /{id}
+  controller: App\Controller\PlaneController::display
+  methods: GET
+  requirements:
+    number: \d+
+
+plane-update:
+  path: /{id}
+  controller: App\Controller\PlaneController::update
+  methods: PATCH
+  requirements:
+    number: \d+
+
+plane-delete:
+  path: /{id}
+  controller: App\Controller\PlaneController::delete
+  methods: DELETE
+  requirements:
+    number: \d+
+
+

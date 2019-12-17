@@ -1,3 +1,68 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+hello:
+  path: /hello
+  controller: App\Controller\HelloController::helloAction
+
+number:
+  path: /number/{number}
+  controller: App\Controller\HelloController::numberAction
+  methods: GET
+  requirements:
+    number: \d+
+
+input:
+  path: /put/{input}
+  controller: App\Controller\HelloController::numberAction
+  methods: PUT
+
+user:
+  path: /user/{lastName}/{firstName}
+  controller: App\Controller\UserController::createUser
+  methods: GET
+  requirements:
+    lastName: \S+
+    firstName: \S+
+
+userList:
+  path: /user/list
+  controller: App\Controller\UserController::getUserList
+
+aiport:
+  path: /airport/{id}
+  controller: App\Controller\AirportController::display
+  methods: GET
+  requirements:
+    id: \d+
+
+airport-all:
+  path: /airport/list
+  controller: App\Controller\AirportController::displayAll
+
+airport:
+  path: /airport/{id]
+  controller: App\Controller\AirportController::display
+  methods: GET
+  requirements:
+    id: \d+
+
+flight-all:
+  path: /flight/list
+  controller: App\Controller\FlightController::displayAll
+
+flight:
+  path: /flight/{id}
+  controller: App\Controller\FlightController::display
+
+pilot-all:
+  path: /pilot/list
+  controller: App\Controller\PilotController::displayAll
+
+pilot:
+  path: /pilot/{id}
+  controller: App\Controller\PilotController::display
+
+plane:
+  resource: './routes/plane.yaml'
+  prefix: /plane/
